@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TaskManagerApp.Models;
+using TaskManagerApp.Data;
 
 namespace TaskManagerApp.Controllers
 {
@@ -8,6 +10,7 @@ namespace TaskManagerApp.Controllers
 
     public class TaskController : ControllerBase
     {
+        private readonly TaskContext _taskContext;
         private static List<TaskItem> tasks = new List<TaskItem>()
         {
         new TaskItem { Id = 1, Title = "Learn C#", IsCompleted = false },
