@@ -1,22 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TaskManagerApp.Models;
-using TaskManagerApp.Data;
+using TaskManagerAPI.Models;
 
-namespace TaskManagerApp.Controllers
+namespace TaskManagerAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
 
     public class TaskController : ControllerBase
     {
-        private readonly TaskContext _taskContext;
         private static List<TaskItem> tasks = new List<TaskItem>()
         {
-        new TaskItem { Id = 1, Title = "Learn C#", IsCompleted = false },
-        new TaskItem { Id = 2, Title = "Build a Web API", IsCompleted = false },
-        new TaskItem { Id = 3, Title = "Deploy it someday", IsCompleted = false },
-
+            new TaskItem { Id = 1, Title = "Learn C#", IsCompleted = false },
+            new TaskItem { Id = 2, Title = "Build a Web API", IsCompleted = false },
+            new TaskItem { Id = 3, Title = "Deploy it someday", IsCompleted = false },
         };
 
         [HttpGet]

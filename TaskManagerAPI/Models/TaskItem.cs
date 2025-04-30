@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaskManagerApp.Models
+namespace TaskManagerAPI.Models
 {
     public class TaskItem 
     {
