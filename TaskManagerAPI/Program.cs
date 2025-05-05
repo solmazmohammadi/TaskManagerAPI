@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TaskManagerAPI.Data;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddApiVersioning(options =>
 });
 
 builder.Services.AddScoped<TaskManagerAPI.Services.TaskService>();
+builder.Services.AddAutoMapper(typeof(TaskManagerAPI.Profiles.TaskProfile).Assembly);
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
