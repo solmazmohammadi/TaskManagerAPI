@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using TaskManagerApp.Data;
+using TaskManagerAPI.Data;
 
 #nullable disable
 
-namespace TaskManagerApp.Migrations
+namespace TaskManagerAPI.Migrations
 {
     [DbContext(typeof(TaskContext))]
     partial class TaskContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace TaskManagerApp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TaskManagerApp.Models.TaskItem", b =>
+            modelBuilder.Entity("TaskManagerAPI.Models.TaskItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
